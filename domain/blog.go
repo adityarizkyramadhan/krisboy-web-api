@@ -14,7 +14,7 @@ type Admin struct {
 //Entitas perblog
 type Blog struct {
 	gorm.Model
-	Photos Photo `gorm:"foreignkey:BlogId"`
+	Photos []Photo `gorm:"foreignkey:BlogId"`
 }
 
 //Entitas Gambar
