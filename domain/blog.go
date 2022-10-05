@@ -1,5 +1,7 @@
 package domain
 
+import "gorm.io/gorm"
+
 //Admin
 type Admin struct {
 	Username    string
@@ -10,4 +12,14 @@ type Admin struct {
 }
 
 //Entitas perblog
-type Blog struct{}
+type Blog struct {
+	gorm.Model
+	Photos Photo `gorm:"foreignkey:BlogId"`
+}
+
+//Entitas Gambar
+type Photo struct {
+	gorm.Model
+	BlogId     uint
+	LinkPhotos uint
+}
