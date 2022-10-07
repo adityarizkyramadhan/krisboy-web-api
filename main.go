@@ -22,4 +22,6 @@ func main() {
 			"message": "hello world",
 		})
 	})
+
+	app.Listen(":8080")
 }
