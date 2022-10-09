@@ -1,6 +1,7 @@
 package main
 
 import (
+	"krisboy-web-api/bootstrap"
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"
@@ -13,6 +14,13 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
+
+	driver, err := bootstrap.GetAppDriver()
+	if err != nil {
+		panic(err.Error())
+	}
+
+	db, err := bootstrap.InitDatabase(driver.DB)
 
 	app := fiber.New()
 	app.Use(cors.New())

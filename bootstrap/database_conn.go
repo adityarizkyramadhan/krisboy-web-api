@@ -23,7 +23,7 @@ func InitDatabase(driver driverSupabase) (*gorm.DB, error) {
 		if err != nil {
 			return nil, err
 		}
-		if err := db_lokal.AutoMigrate(new(domain.Admin)); err != nil {
+		if err := db_lokal.AutoMigrate(new(domain.Admin), new(domain.Blog), new(domain.Photo)); err != nil {
 			return nil, err
 		}
 		db = db_lokal
