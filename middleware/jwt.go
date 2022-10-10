@@ -13,7 +13,7 @@ import (
 func CreateTokenJwt(id uint, admin bool, secretKey string) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodES256, jwt.MapClaims{
 		"id":      id,
-		"isAdmin": true,
+		"isAdmin": admin,
 		"exp":     time.Now().Add(12 * time.Hour).Unix(),
 	})
 
