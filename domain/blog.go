@@ -5,52 +5,52 @@ import "gorm.io/gorm"
 //Admin
 type Admin struct {
 	gorm.Model
-	Username string
-	Password string
-	Name     string
-	Address  string
+	Username string `gorm:"varchar(255)" json:"username" binding:"required"`
+	Password string `json:"password" binding:"required"`
+	Name     string `gorm:"varchar(255)" json:"name" binding:"required"`
+	Address  string `gorm:"varchar(255)" json:"address"`
 }
 
 //Entitas perblog
 type Blog struct {
 	gorm.Model
-	TitleBlog              string
-	NameLaptop             string
-	PriceLaptop            string
-	BrandLaptop            string
-	IntoductionDescription string
-	DesignDescription      string
-	PerformDescription     string
-	ScreenDescription      string
-	BatteryDescription     string
-	ConectivityDescription string
-	Summary                string
-	LinkShopee             string
-	LinkTokopedia          string
-	LinkBukalapak          string
-	LinkLazada             string
-	LinkBlibli             string
-	DeviceTypeGeneral      string
-	ModelGeneral           string
-	ReleaseGeneral         string
-	ProcessorPlatform      string
-	GhrapicsPlatform       string
-	MemoryPlatform         string
-	StoragePlatform        string
-	OSPlatform             string
-	DimensionsDesign       string
-	WeightDesign           string
-	DesignFeatures         string
-	ColorDesign            string
-	BatteryDesign          string
-	KeyboardDesign         string
-	ScreenTypeDisplay      string
-	SizeResolutionDisplay  string
-	TouchScreen            string
+	TitleBlog               string `gorm:"varchar(255)" json:"titleBlog"`
+	NameLaptop              string `gorm:"varchar(255)" json:"nameLaptop"`
+	PriceLaptop             string `gorm:"varchar(255)" json:"priceLaptop"`
+	BrandLaptop             string `gorm:"varchar(255)" json:"brandLaptop"`
+	IntroductionDescription string `gorm:"text" json:"introductionDescription"`
+	DesignDescription       string `gorm:"text" json:"designDescription"`
+	PerformDescription      string `gorm:"text" json:"performDescription"`
+	ScreenDescription       string `gorm:"text" json:"screenDescription"`
+	BatteryDescription      string `gorm:"text" json:"batteryDescription"`
+	ConnectivityDescription string `gorm:"text" json:"connectivityDescription"`
+	Summary                 string `gorm:"text" json:"summary"`
+	LinkShopee              string `gorm:"varchar(255)" json:"linkShopee"`
+	LinkTokopedia           string `gorm:"varchar(255)" json:"linkTokopedia"`
+ 	LinkBukalapak           string `gorm:"varchar(255)" json:"linkBukalapak"`
+	LinkLazada              string `gorm:"varchar(255)" json:"linkLazada"`
+	LinkBlibli              string `gorm:"varchar(255)" json:"linkBlibli"`
+	DeviceTypeGeneral       string `gorm:"varchar(255)" json:"deviceTypeGeneral"`
+	ModelGeneral            string `gorm:"varchar(255)" json:"modelGeneral"`
+	ReleaseGeneral          string `gorm:"varchar(255)" json:"releaseGeneral"`
+	ProcessorPlatform       string `gorm:"varchar(255)" json:"processorPlatform"`
+	GraphicsPlatform        string `gorm:"varchar(255)" json:"graphicsPlatform"`
+	MemoryPlatform          string `gorm:"varchar(255)" json:"memoryPlatform"`
+	StoragePlatform         string `gorm:"varchar(255)" json:"storagePlatform"`
+	OSPlatform              string `gorm:"varchar(255)" json:"osPlatform"`
+	DimensionsDesign        string
+	WeightDesign            string
+	DesignFeatures          string
+	ColorDesign             string
+	BatteryDesign           string
+	KeyboardDesign          string
+	ScreenTypeDisplay       string
+	SizeResolutionDisplay   string
+	TouchScreen             string
 	//Mutivalue
-	Features              string
-	WifiConnectivity      string
-	BluetoothConnectivity string
+	Features               string
+	WifiConnectivity       string
+	BluetoothConnectivity  string
 	//Mutivalue
 	USBConnectivity  string
 	HDMIConnectivity string
